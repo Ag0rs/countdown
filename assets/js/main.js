@@ -34,3 +34,22 @@ function updateDate() {
 
 document.addEventListener("DOMContentLoaded", updateDate);
 
+document.addEventListener("DOMContentLoaded", function () {
+    const settingsBtn = document.querySelector(".settings-btn");
+    const themeButtons = document.querySelector(".theme-buttons");
+    const blackThemeBtn = document.querySelector(".black-theme");
+    const whiteThemeBtn = document.querySelector(".white-theme");
+    const body = document.body;
+
+    settingsBtn.addEventListener("click", function () {
+        themeButtons.style.display = themeButtons.style.display === "flex" ? "none" : "flex";
+    });
+
+    blackThemeBtn.addEventListener("click", function () {
+        body.classList.remove("light-mode");
+    });
+
+    whiteThemeBtn.addEventListener("click", function () {
+        body.classList.add("light-mode");
+    });
+});
