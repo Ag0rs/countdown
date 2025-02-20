@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Countdown</title>
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js" defer></script>
 </head>
 
 <body>
@@ -34,8 +34,38 @@
             </button>
         </div>
     </aside>
+
     <header class="header">
-        <h1>Countdown</h1>
+        <h1>
+            Countdown 
+            <button class="clock-btn">
+                <svg class="clock-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="orchid" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline class="clock-hands" points="12 6 12 12 16 14" />
+                </svg>
+            </button>
+        </h1>
+
+        <main class="timer-container">
+            <div class="timer-header">
+                <div class="timer-name">Clock</div>
+            </div>
+            <div class="timer-display">
+                <div class="time-box">
+                    <span class="time-value" id="hours">00</span>
+                    <span class="time-label">Hour</span>
+                </div>
+                <div class="time-box">
+                    <span class="time-value" id="minutes">00</span>
+                    <span class="time-label">Minute</span>
+                </div>
+                <div class="time-box">
+                    <span class="time-value" id="seconds">00</span>
+                    <span class="time-label">Second</span>
+                </div>
+            </div>
+            <div class="date">MM/DD/YYYY</div>
+        </main>
     </header>
 
 </body>
