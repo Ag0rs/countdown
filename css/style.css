@@ -97,14 +97,22 @@ body {
     height: 40px;
     border-radius: 50%;
     margin-top: 40px;
-    transition: width 0.3s ease-in-out, border-radius 0.3s ease-in-out;
+    transition: 
+        width 0.3s ease-in-out, 
+        border-radius 0.3s ease-in-out, 
+        transform 0.2s ease-in-out, 
+        box-shadow 0.2s ease-in-out;
     overflow: hidden;
     white-space: nowrap;
 }
 
 .sidebar.open .add-btn {
-    width: 450%;
+    width: 400%;
     border-radius: 20px;
+}
+
+.add-btn:hover {
+    transform: scale(1.2);
 }
 
 .settings-btn {
@@ -138,11 +146,23 @@ body {
     width: calc(100% - 250px);
 }
 
-h1{
+h1 {
     margin: 0;
     padding: 20px;
     background: #333;
     font-size: 5vw;
+    display: flex;
+    align-items: center;
+}
+
+h1 span {
+    cursor: pointer;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+h1 span:hover {
+    color: orchid;
+    text-shadow: 0 0 10px rgb(130, 18, 127), 0 0 20px rgb(159, 37, 155), 0 0 30px rgb(140, 32, 136);
 }
 
 .clock-btn {

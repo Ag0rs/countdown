@@ -53,3 +53,12 @@ document.addEventListener("DOMContentLoaded", function () {
         body.classList.add("light-mode");
     });
 });
+
+document.querySelector(".add-btn").addEventListener("click", function () {
+    window.location.href = "pages/addcountdown.html";
+});
+
+document.getElementById('countdown-title').querySelector('span').addEventListener('click', function() {
+
+    location.reload();
+});
