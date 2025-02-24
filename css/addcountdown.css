@@ -16,11 +16,6 @@ a {
     color: inherit;
 }
 
-ul {
-    list-style: none;
-    padding: 0;
-}
-
 button {
     border: none;
     cursor: pointer;
@@ -29,7 +24,6 @@ button {
 body {
     background-color: #222;
     color: orchid;
-    text-align: left;
     font-size: 24px;
     font-weight: bold;
 }
@@ -65,4 +59,120 @@ h1 .home-btn {
 h1 .home-btn:hover {
     color: orchid;
     text-shadow: 0 0 10px rgb(130, 18, 127), 0 0 20px rgb(159, 37, 155), 0 0 30px rgb(140, 32, 136);
+}
+
+.main-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 20px;
+}
+
+.event-list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-height: 300px;
+    overflow-y: auto;
+    border: 2px solid orchid;
+    padding: 10px;
+    border-radius: 10px;
+    min-width: 200px;
+}
+
+.scrollable-list {
+    width: 100%;
+}
+
+.timer-button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: none;
+    background: #444;
+    color: #cba6f7;
+    font-size: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s;
+}
+
+.timer-button:hover {
+    background: #ff79c6;
+    transform: scale(1.05);
+}
+
+.timer-section {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+}
+
+.timer-box {
+    background: #333;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.timer-title {
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: orchid;
+    outline: none;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin: 15px 0;
+}
+
+.time-input {
+    width: 80px;
+    font-size: 2.5rem;
+    text-align: center;
+    border: none;
+    background: #444;
+    color: orchid;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.add-event, .ok-btn, .remove-btn {
+    padding: 15px;
+    border: none;
+    background: #444;
+    color: #cba6f7;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.add-event:hover, .ok-btn:hover, .remove-btn:hover {
+    background: #ff79c6;
+    transform: scale(1.05);
+}
+
+.timer-button:hover {
+    background-color: #ff79c6;
+}
+
+.timer-button.active {
+    background-color: #ff79c6;
+    color: white;
 }

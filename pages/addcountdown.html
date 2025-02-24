@@ -7,11 +7,42 @@
     <title>Countdown</title>
 </head>
 <body>
-    <h1>
-        <button class="back-btn" onclick="history.back()">
-            &#8592;
-        </button>
-        <span class="home-btn" onclick="location.href='/'">Countdown</span>
-    </h1>
+    <div class="container">
+        <h1>
+            <button class="back-btn" onclick="history.back()">&#8592;</button>
+            <span class="home-btn" onclick="location.href='/'">Countdown</span>
+        </h1>
+
+        <div class="main-wrapper">
+            <div class="event-list">
+                <button class="add-event" onclick="addNewTimer()">Add new...</button>
+                <div class="scrollable-list" id="timerList">
+                </div>
+            </div>
+
+            <div class="timer-section">
+                <div class="timer-box">
+                    <input type="text" class="timer-title" id="timerTitle" placeholder="Enter title...">
+                    <div class="timer">
+                        <input type="number" class="time-input" id="hours" min="0" max="99" value="00">
+                        <span class="separator">:</span>
+                        <input type="number" class="time-input" id="minutes" min="0" max="59" value="00">
+                        <span class="separator">:</span>
+                        <input type="number" class="time-input" id="seconds" min="0" max="59" value="00">
+                    </div>
+
+                    <div class="date-picker">
+                        <input type="date" id="datePicker">
+                        <button class="ok-btn" onclick="saveTimer()">OK</button>
+                    </div>
+
+                    <button class="remove-btn" onclick="removeTimer()">Remove</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/scriptaddcountdown.js"></script>
 </body>
 </html>
