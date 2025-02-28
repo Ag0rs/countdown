@@ -37,7 +37,6 @@
                 <button class="theme-btn black-theme"></button>
                 <button class="theme-btn white-theme"></button>
             </div>            
-            
         </div>
     </aside>
 
@@ -50,7 +49,23 @@
                     <polyline class="clock-hands" points="12 6 12 12 16 14" />
                 </svg>
             </button>
-        </h1>                
+            <div class="avatar-container">
+                <button class="avatar-btn" id="avatarBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="orchid" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="8" r="4" />
+                        <path d="M12 14c-4 0-6 2-6 2v1h12v-1s-2-2-6-2z" />
+                    </svg>
+                </button>
+                <div class="auth-menu" id="authMenu">
+                    <div class="auth-form">
+                        <input type="text" id="login" placeholder="Username">
+                        <input type="password" id="password" placeholder="Password">
+                        <button class="auth-btn login-btn">Login</button>
+                        <button class="auth-btn register-btn">Create Account</button>
+                    </div>
+                </div>
+            </div>
+        </h1>               
 
         <main class="timer-container">
             <div class="timer-header">

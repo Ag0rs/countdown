@@ -62,3 +62,12 @@ document.getElementById('countdown-title').querySelector('span').addEventListene
 
     location.reload();
 });
+
+document.getElementById('avatarBtn').addEventListener('click', function() {
+    var authMenu = document.getElementById('authMenu');
+    if (authMenu.style.display === 'none' || authMenu.style.display === '') {
+        authMenu.style.display = 'flex';
+    } else {
+        authMenu.style.display = 'none';
+    }
+});
