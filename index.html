@@ -43,12 +43,22 @@
     <header class="header">
         <h1 id="countdown-title">
             <span>Countdown</span>
+
             <button class="clock-btn">
                 <svg class="clock-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="orchid" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="12" r="10" />
                     <polyline class="clock-hands" points="12 6 12 12 16 14" />
                 </svg>
             </button>
+            
+            <button class="timer-btn">
+                <svg class="timer-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="orchid" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 8v4l2 2" />
+                    <path d="M12 2v2" />
+                </svg>
+            </button>
+
             <div class="avatar-container">
                 <button class="avatar-btn" id="avatarBtn">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="orchid" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -87,6 +97,25 @@
             </div>
             <div class="date">MM/DD/YYYY</div>
         </main>
+
+        <div class="timer-section" style="display: none;">
+            <div class="timer-box">
+                <div class="timer-title">Countdown</div>
+                <div class="timer">
+                    <input type="number" class="time-input" id="hours" min="0" max="99" value="00">
+                    <span class="separator">:</span>
+                    <input type="number" class="time-input" id="minutes" min="0" max="59" value="00">
+                    <span class="separator">:</span>
+                    <input type="number" class="time-input" id="seconds" min="0" max="59" value="00">
+                </div>
+        
+                <div class="date-picker">
+                    <input type="date" id="datePicker">
+                    <button class="start-btn" onclick="startTimer()">Start</button>
+                </div>
+            </div>
+        </div>
+        
     </header>
 
 </body>
