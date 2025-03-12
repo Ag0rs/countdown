@@ -150,3 +150,56 @@ document.querySelector('.timer-btn').addEventListener('click', function() {
     document.querySelector('.timer-section').style.display = 'flex';
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    let timerInterval;
+    let running = false;
+
+    const startBtn = document.getElementById("startBtn");
+    const hoursInput = document.getElementById("hoursInput");
+    const minutesInput = document.getElementById("minutesInput");
+    const secondsInput = document.getElementById("secondsInput");
+    const timerDisplay = document.getElementById("timerDisplay");
+    const hoursElement = document.getElementById("timerHours");
+    const minutesElement = document.getElementById("timerMinutes");
+    const secondsElement = document.getElementById("timerSeconds");
+
+    startBtn.addEventListener("click", function () {
+        if (running) {
+            clearInterval(timerInterval); // Якщо таймер вже працює, зупинити його
+            startBtn.textContent = "Старт"; // Змінити текст на "Старт"
+        } else {
+            const hours = parseInt(hoursInput.value, 10) || 0;
+            const minutes = parseInt(minutesInput.value, 10) || 0;
+            const seconds = parseInt(secondsInput.value, 10) || 0;
+
+            let totalSeconds = hours * 3600 + minutes * 60 + seconds;
+
+            if (totalSeconds <= 0) {
+                alert("Введіть коректний час.");
+                return;
+            }
+
+            startBtn.textContent = "Пауза"; // Змінити текст на "Пауза"
+            running = true;
+
+            timerInterval = setInterval(function () {
+                if (totalSeconds <= 0) {
+                    clearInterval(timerInterval);
+                    alert("Таймер завершився!");
+                    startBtn.textContent = "Старт"; // Відновлюємо кнопку на "Старт"
+                    running = false;
+                } else {
+                    totalSeconds--;
+
+                    const hrs = Math.floor(totalSeconds / 3600);
+                    const mins = Math.floor((totalSeconds % 3600) / 60);
+                    const secs = totalSeconds % 60;
+
+                    hoursElement.textContent = String(hrs).padStart(2, "0");
+                    minutesElement.textContent = String(mins).padStart(2, "0");
+                    secondsElement.textContent = String(secs).padStart(2, "0");
+                }
+            }, 1000);
+        }
+    });
+});

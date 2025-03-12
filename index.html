@@ -98,26 +98,20 @@
             <div class="date">MM/DD/YYYY</div>
         </main>
 
-        <div class="timer-section" style="display: none;">
-            <div class="timer-box">
-                <div class="timer-title">Countdown</div>
-                <div class="timer">
-                    <input type="number" class="time-input" id="hours" min="0" max="99" value="00">
-                    <span class="separator">:</span>
-                    <input type="number" class="time-input" id="minutes" min="0" max="59" value="00">
-                    <span class="separator">:</span>
-                    <input type="number" class="time-input" id="seconds" min="0" max="59" value="00">
-                </div>
-        
-                <div class="date-picker">
-                    <input type="date" id="datePicker">
-                    <button class="start-btn" onclick="startTimer()">Start</button>
-                </div>
+        <div class="timer-section">
+            <input type="number" id="hoursInput" class="time-input" placeholder="Години" />
+            <input type="number" id="minutesInput" class="time-input" placeholder="Хвилини" />
+            <input type="number" id="secondsInput" class="time-input" placeholder="Секунди" />
+            <button id="startBtn" class="start-btn">Старт</button>
+    
+            <div id="timerDisplay">
+                
+                <span id="timerHours">00</span>:<span id="timerMinutes">00</span>:<span id="timerSeconds">00</span>
             </div>
         </div>
         
     </header>
-
+    
 </body>
 
 </html>
