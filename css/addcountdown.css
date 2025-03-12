@@ -50,7 +50,8 @@ h1 {
 
 .back-btn:hover {
     color: orchid;
-    text-shadow: 0 0 10px rgb(130, 18, 127), 0 0 20px rgb(159, 37, 155), 0 0 30px rgb(140, 32, 136);}
+    text-shadow: 0 0 10px rgb(130, 18, 127), 0 0 20px rgb(159, 37, 155), 0 0 30px rgb(140, 32, 136);
+}
 
 h1 .home-btn {
     cursor: pointer;
@@ -66,6 +67,7 @@ h1 .home-btn:hover {
     justify-content: space-between;
     align-items: flex-start;
     margin: 20px;
+    flex-wrap: wrap;
 }
 
 .event-list {
@@ -107,6 +109,7 @@ h1 .home-btn:hover {
     flex: 2;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .timer-box {
@@ -175,4 +178,106 @@ h1 .home-btn:hover {
 .timer-button.active {
     background-color: #ff79c6;
     color: white;
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 20px;
+    }
+
+    .main-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .timer-section {
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 8vw;
+    }
+
+    .back-btn {
+        font-size: 6vw;
+    }
+
+    .event-list {
+        max-height: 250px;
+        min-width: 100%;
+    }
+
+    .timer-button {
+        font-size: 0.9rem;
+    }
+
+    .time-input {
+        font-size: 2rem;
+        width: 70px;
+    }
+
+    .timer-box {
+        padding: 15px;
+    }
+
+    .add-event, .ok-btn, .remove-btn {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 10vw;
+    }
+
+    .back-btn {
+        font-size: 7vw;
+    }
+
+    .event-list {
+        max-height: 200px;
+        min-width: 100%;
+    }
+
+    .time-input {
+        font-size: 1.8rem;
+        width: 60px;
+    }
+
+    .timer-box {
+        padding: 10px;
+    }
+
+    .add-event, .ok-btn, .remove-btn {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 320px) {
+    h1 {
+        font-size: 12vw;
+    }
+
+    .back-btn {
+        font-size: 8vw;
+    }
+
+    .event-list {
+        max-height: 180px;
+        min-width: 100%;
+    }
+
+    .time-input {
+        font-size: 1.6rem;
+        width: 50px;
+    }
+
+    .timer-box {
+        padding: 8px;
+    }
+
+    .add-event, .ok-btn, .remove-btn {
+        font-size: 0.8rem;
+    }
 }

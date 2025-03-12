@@ -48,7 +48,8 @@ body {
 }
 
 .sidebar.open {
-    width: 250px;
+    width: 260px;
+    z-index: 100;
 }
 
 .menu-toggle {
@@ -484,4 +485,131 @@ h1 span:hover {
 
 span {
     margin: 0 5px;
+}
+
+@media (max-width: 350px) {
+    .timer-icon, .clock-icon {
+        width: 10px;
+        height: 10px;
+    }
+
+}
+
+@media (max-width: 850px) {
+    .timer-section__clock {
+        max-width: 100%;
+        justify-content: center;
+        gap: 5px;
+        flex-wrap: nowrap;
+    }
+
+    .time-input {
+        width: 60px;
+        font-size: 1.6rem;
+        padding: 5px;
+    }
+
+    #timerHours, #timerMinutes, #timerSeconds {
+        font-size: 28px;
+        padding: 5px 8px;
+        min-width: 40px;
+        flex-shrink: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .timer-section {
+        left: 50%;
+        width: auto;
+        position: relative;
+        top: auto;
+        transform: translateX(-50%) scale(0.8);
+        padding: 5px;
+    }
+
+    .timer-section__clock {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 5px;
+    }
+
+    .time-input {
+        width: 50px;
+        font-size: 1.4rem;
+        padding: 4px;
+    }
+
+    #timerHours, #timerMinutes, #timerSeconds {
+        font-size: 26px;
+        padding: 4px 6px;
+        min-width: 38px;
+    }
+}
+
+@media (max-width: 480px) {
+    .timer-section {
+        transform: translateX(-50%) scale(0.6);
+    }
+
+    .timer-section__clock {
+        gap: 2px;
+    }
+
+    .time-input {
+        width: 45px;
+        font-size: 1.2rem;
+        padding: 3px;
+    }
+
+    #timerHours, #timerMinutes, #timerSeconds {
+        font-size: 20px;
+        padding: 3px 5px;
+        min-width: 30px;
+    }
+}
+
+@media (max-width: 347px) {
+    .timer-section {
+        transform: translateX(-50%) scale(0.5);
+        padding: 3px;
+    }
+
+    .timer-section__clock {
+        gap: 2px;
+    }
+
+    .time-input {
+        width: 40px;
+        font-size: 1.1rem;
+        padding: 3px;
+    }
+
+    #timerHours, #timerMinutes, #timerSeconds {
+        font-size: 18px; 
+        padding: 2px 4px;
+        min-width: 28px;
+    }
+}
+
+@media (max-width: 304px) {
+    .timer-section {
+        transform: translateX(-50%) scale(0.4);
+        padding: 2px;
+    }
+
+    .timer-section__clock {
+        gap: 2px;
+    }
+
+    .time-input {
+        width: 35px;
+        font-size: 1rem;
+        padding: 2px;
+    }
+
+    #timerHours, #timerMinutes, #timerSeconds {
+        font-size: 16px;
+        padding: 2px 4px;
+        min-width: 26px;
+    }
 }
