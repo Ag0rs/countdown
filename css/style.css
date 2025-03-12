@@ -420,7 +420,7 @@ h1 span:hover {
 }
 
 .timer-section {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     position: absolute;
@@ -428,37 +428,12 @@ h1 span:hover {
     left: calc(50% + 40px);
     transform: translate(-50%, -50%);
 }
-
-.timer-box {
-    background: #333;
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
-    max-width: 400px;
-    width: 100%;
-    text-align: center;
-}
-
-.timer-title {
-    width: 100%;
-    text-align: center;
-    font-size: 1.5rem;
-    background: none;
-    border: none;
-    color: orchid;
-    outline: none;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.timer {
+.timer-section__clock {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5px;
-    margin: 15px 0;
+    gap: 20px;
 }
-
 .time-input {
     width: 80px;
     font-size: 2.5rem;
@@ -470,26 +445,11 @@ h1 span:hover {
     padding: 10px;
 }
 
-.separator {
-    font-size: 2.5rem;
-    color: orchid;
+.timer-section__buttons{
+    display: flex;
+    gap: 20px;
 }
-
-.date-picker {
-    margin-top: 15px;
-}
-
-#datePicker {
-    padding: 10px;
-    font-size: 1.2rem;
-    border-radius: 10px;
-    background: #444;
-    cursor: pointer;
-    color: orchid;
-    border: none;
-}
-
-.start-btn {
+.timer-section__buttons button{
     width: 100%;
     padding: 12px;
     background-color: orchid;
@@ -499,9 +459,29 @@ h1 span:hover {
     cursor: pointer;
     margin-top: 15px;
     transition: background-color 0.3s ease, transform 0.2s;
+    display: flex;
 }
 
-.start-btn:hover {
+.timer-section__buttons button:hover {
     background-color: #e073d3;
     transform: scale(1.05);
+}
+
+#timerHours, #timerMinutes, #timerSeconds {
+    font-size: 48px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    background: linear-gradient(45deg, #e073d3);
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin: 20px;
+    display: inline-block;
+    min-width: 60px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+span {
+    margin: 0 5px;
 }

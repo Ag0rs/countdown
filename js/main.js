@@ -70,6 +70,74 @@ document.getElementById('avatarBtn').addEventListener('click', function() {
         authMenu.style.display = 'none';
     }
 });
+document.addEventListener("DOMContentLoaded", function() { 
+    let timerInterval;
+    let isPaused = false;
+    let remainingSeconds = 0;
+    
+    const hoursInput = document.getElementById("hoursInput");
+    const minutesInput = document.getElementById("minutesInput");
+    const secondsInput = document.getElementById("secondsInput");
+    const startBtn = document.getElementById("startBtn");
+    const resetBtn = document.getElementById("reset");
+    
+    const timerHours = document.getElementById("timerHours");
+    const timerMinutes = document.getElementById("timerMinutes");
+    const timerSeconds = document.getElementById("timerSeconds");
+    
+    function updateTimerDisplay(h, m, s) {
+        timerHours.textContent = String(h).padStart(2, "0");
+        timerMinutes.textContent = String(m).padStart(2, "0");
+        timerSeconds.textContent = String(s).padStart(2, "0");
+    }
+
+    function startTimer() {
+        if (remainingSeconds <= 0) {
+            remainingSeconds = 
+                (parseInt(hoursInput.value) || 0) * 3600 + 
+                (parseInt(minutesInput.value) || 0) * 60 + 
+                (parseInt(secondsInput.value) || 0);
+            
+            if (remainingSeconds <= 0) return;
+        }
+        
+        if (!isPaused) {
+            timerInterval = setInterval(function() {
+                if (remainingSeconds <= 0) {
+                    clearInterval(timerInterval);
+                    alert("Час вийшов!");
+                    startBtn.textContent = "Старт";
+                    return;
+                } else {
+                    startBtn.textContent = "Пауза";
+                }
+                remainingSeconds--;
+                let h = Math.floor(remainingSeconds / 3600);
+                let m = Math.floor((remainingSeconds % 3600) / 60);
+                let s = remainingSeconds % 60;
+                updateTimerDisplay(h, m, s);
+            }, 1000);
+        } else {
+            clearInterval(timerInterval);
+        }
+        
+        isPaused = !isPaused;
+    }
+    
+    function resetTimer() {
+        clearInterval(timerInterval);
+        isPaused = false;
+        remainingSeconds = 0;
+        updateTimerDisplay(0, 0, 0);
+        startBtn.textContent = "Старт";
+        hoursInput.value = "";
+        minutesInput.value = "";
+        secondsInput.value = "";
+    }
+    
+    startBtn.addEventListener("click", startTimer);
+    resetBtn.addEventListener("click", resetTimer);
+});
 
 document.addEventListener("DOMContentLoaded", function() {
     let clockInterval;
@@ -90,6 +158,7 @@ document.addEventListener("DOMContentLoaded", function() {
             clockInterval = setInterval(updateClock, 1000);
         }
     });
+
 
     function updateClock() {
         const now = new Date();
@@ -137,19 +206,6 @@ document.addEventListener("DOMContentLoaded", function() {
     clockInterval = setInterval(updateClock, 1000);
 });
 
-document.querySelector('.timer-btn').addEventListener('click', function() {
-    const timeInputs = document.querySelectorAll('.time-input');
-    const dateInput = document.getElementById('datePicker');
-
-    timeInputs.forEach(input => {
-        input.value = 0;
-    });
-
-    dateInput.value = '';
-
-    document.querySelector('.timer-section').style.display = 'flex';
-});
-
 document.addEventListener("DOMContentLoaded", function () {
     let timerInterval;
     let running = false;
@@ -165,8 +221,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     startBtn.addEventListener("click", function () {
         if (running) {
-            clearInterval(timerInterval); // Якщо таймер вже працює, зупинити його
-            startBtn.textContent = "Старт"; // Змінити текст на "Старт"
+            clearInterval(timerInterval);
+            startBtn.textContent = "Старт";
         } else {
             const hours = parseInt(hoursInput.value, 10) || 0;
             const minutes = parseInt(minutesInput.value, 10) || 0;
@@ -179,14 +235,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 return;
             }
 
-            startBtn.textContent = "Пауза"; // Змінити текст на "Пауза"
+            startBtn.textContent = "Пауза";
             running = true;
 
             timerInterval = setInterval(function () {
                 if (totalSeconds <= 0) {
                     clearInterval(timerInterval);
                     alert("Таймер завершився!");
-                    startBtn.textContent = "Старт"; // Відновлюємо кнопку на "Старт"
+                    startBtn.textContent = "Старт";
                     running = false;
                 } else {
                     totalSeconds--;

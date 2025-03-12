@@ -99,14 +99,20 @@
         </main>
 
         <div class="timer-section">
-            <input type="number" id="hoursInput" class="time-input" placeholder="Години" />
-            <input type="number" id="minutesInput" class="time-input" placeholder="Хвилини" />
-            <input type="number" id="secondsInput" class="time-input" placeholder="Секунди" />
-            <button id="startBtn" class="start-btn">Старт</button>
+            <div class="timer-section__clock">
+                <input type="number" id="hoursInput" class="time-input" placeholder="H" />:
+                <input type="number" id="minutesInput" class="time-input" placeholder="M" />:
+                <input type="number" id="secondsInput" class="time-input" placeholder="S" />
+            </div>
+            <div class="timer-section__buttons">
+                <button id="startBtn" class="start-btn">Star</button>
+                <button id="reset" >Reset</button>
+            </div>
     
             <div id="timerDisplay">
                 
-                <span id="timerHours">00</span>:<span id="timerMinutes">00</span>:<span id="timerSeconds">00</span>
+                <span id="timerHours">00</span>:</span><span id="timerMinutes">00</span>:<span id="timerSeconds">00</span>
+                
             </div>
         </div>
         
